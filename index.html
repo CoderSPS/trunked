@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <title>Trunked</title>
+</head>
+
+<body>
+    <h1 class="heading1">Trunked</h1>
+    <p class="info">One of the many things we take for granted are trees. They are found everywhere, providing oxygen, shade, and habitat for countless species, including us humans. Many things that we use are made out of things from trees, like houses, furniture, instruments, paper, cardboard, syrup, medicine, and the list goes on and on.</p>
+    <button onclick="generateImages()">Generate Random Images</button>
+    <button onclick="generateImage()">Generate Single Image</button>
+    <div id="gallery" class="gallery"></div>
+    <p class="challenge">Challenge: Can you find the name of each tree in the images? Then list one cool fact you know about it.</p>
+    <input type="text" class="answer" placeholder="Type your answer here...">
+    <p class="info">Note: Your answer won't be saved anywhere and will be cleared when you refresh the page.</p>
+</body>
+
+<script>
+    const images = [
+        "images/tree1.jpg",
+        "images/tree2.jpg",
+        "images/tree3.jpg",
+        "images/tree4.jpg",
+        "images/tree5.jpg",
+        "images/tree6.jpg",
+        "images/tree7.jpg",
+        "images/tree8.jpg",
+        "images/tree9.jpg",
+        "images/tree10.jpg",
+        "images/tree11.jpg",
+        "images/tree12.jpg",
+        "images/tree13.jpg",
+        "images/tree14.jpg",
+        "images/tree15.jpg",
+        "images/tree16.webp",
+        "images/tree17.jpg",
+        "images/tree18.jpeg",
+        "images/tree19.jpg",
+        "images/tree20.webp",
+        "images/tree21.jpg",
+        "images/tree22.jpg",
+        "images/tree23.jpg",
+        "images/tree24.jpg",
+        "images/tree25.jpg",
+        "images/tree26.jpg",
+        "images/tree27.jpg",
+        "images/tree28.jpg",
+        "images/tree29.jpg",
+        "images/tree30.jpg",
+        "images/tree31.jpg",
+        "images/tree32.jpg",
+        "images/tree33.jpg",
+        "images/tree34.jpg",
+        "images/tree35.jpg",
+        "images/tree36.webp",
+        "images/tree37.jpg",
+        "images/tree38.jpg",
+        "images/tree39.webp",
+        "images/tree40.jpg",
+        "images/tree41.jpg",
+        "images/tree42.jpg",
+        "images/tree43.jpg",
+        "images/tree44.jpg",
+        "images/tree45.jpg",
+        "images/tree46.jpg",
+        "images/tree47.webp",
+        "images/tree48.jpg",
+        "images/tree49.jpg",
+        "images/tree50.jpg"
+    ];
+
+    function generateImage() {
+        const gallery= document.getElementById("gallery");
+        gallery.innerHTML = "";
+
+        const count = 1;
+        const shuffled = [...images].sort(() => Math.random() - 0.5);
+        const selected = shuffled.slice(0, count);
+        selected.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.width = 400;
+            img.height = 300;
+            img.style.borderRadius = "8px";
+            gallery.appendChild(img);
+        });
+    }
+
+    function generateImages() {
+        const gallery = document.getElementById("gallery");
+        gallery.innerHTML = "";
+
+        const count = 5;
+        const shuffled = [...images].sort(() => Math.random() - 0.5);
+        const selected = shuffled.slice(0, count);
+        selected.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.width = 200;
+            img.height = 150;
+            img.style.borderRadius = "8px";
+            gallery.appendChild(img);
+        });
+    }
+</script>
+
+</html>
